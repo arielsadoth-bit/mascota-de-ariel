@@ -1,0 +1,18 @@
+MASCOTA DE ESCRITORIO - PELUCHE 10
+
+1. Instala Python 3 en Windows.
+2. Durante la instalación marca "Add Python to PATH".
+3. Haz doble clic en EJECUTAR_MASCOTA.bat.
+4. La mascota aparecerá sobre el escritorio.
+
+CONTROLES
+- Clic izquierdo + arrastrar: mover la mascota.
+- Clic derecho: abrir menú.
+- Pausar / continuar: detiene o reanuda el movimiento.
+- Cerrar mascota: termina el programa.
+
+ARCHIVOS
+- mascota_escritorio.py : programa principal
+- peluche.png           : imagen de la mascota
+- requirements.txt      : dependencia Pillow
+- EJECUTAR_MASCOTA.bat  : inicio rápido en Windows
