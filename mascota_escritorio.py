@@ -134,8 +134,7 @@ class MascotaEscritorio:
         ancho, alto = parpadeo.size
         y = int(alto * 0.455)
         grosor = max(3, int(ancho * 0.018))
-        # Posiciones medidas en la imagen actual para cerrar ambos ojos parejo.
-        for centro_x in (int(ancho * 0.385), int(ancho * 0.645)):
+        for centro_x in (int(ancho * 0.40), int(ancho * 0.60)):
             radio = int(ancho * 0.065)
             dibujo.ellipse(
                 (centro_x - radio, y - radio, centro_x + radio, y + radio),
@@ -182,7 +181,7 @@ class MascotaEscritorio:
             self.y = self.base_y - paso + salto
 
             if self.tick >= self.proximo_parpadeo:
-                self.frames_parpadeo = 5
+                self.frames_parpadeo = 14
                 self.proximo_parpadeo = self.tick + 85
             if self.frames_parpadeo > 0:
                 self.canvas.itemconfigure(self.id_img, image=self.imagen_parpadeo_tk)
