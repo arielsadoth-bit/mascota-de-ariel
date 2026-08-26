@@ -1,21 +1,26 @@
 @echo off
-title Mascota de escritorio - Peluche 10
 cd /d "%~dp0"
 
-where python >nul 2>nul
+where pythonw >nul 2>nul
 if errorlevel 1 (
     echo.
-    echo No se encontro Python en tu PC.
+    echo No se encontro Python con ventana oculta en tu PC.
     echo Instala Python 3 desde python.org y marca "Add Python to PATH".
     echo.
     pause
     exit /b
 )
 
-echo Instalando Pillow si hace falta...
-python -m pip install -r requirements.txt
+python -c "import PIL" >nul 2>nul
+if errorlevel 1 (
+    echo Instalando Pillow por primera vez...
+    python -m pip install -r requirements.txt
+    if errorlevel 1 (
+        echo No se pudo instalar Pillow.
+        pause
+        exit /b
+    )
+)
 
-echo.
-echo Iniciando mascota...
-python mascota_escritorio.py
-pause
+start "" pythonw mascota_escritorio.py
+exit /b
